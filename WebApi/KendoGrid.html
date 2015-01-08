@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Local References</title>
+    <link href="content/kendo.common.min.css" rel="stylesheet" />
+    <link href="content/kendo.default.min.css" rel="stylesheet" />
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/kendo.web.min.js"></script>
+</head>
+<body>
+    <div id="flags"></div>
+    <div id="grid"></div>
+
+    <script>
+        var target = "http://localhost/demosite/api/contact/";
+        //var target = "http://localhost:1712/api/contact/";
+        var contactSource = new kendo.data.DataSource({
+                requestEnd: function (e) {
+                    var node = document.getElementById('flags');
+                    while (node.firstChild) {
+                        node.removeChild(node.firstChild);
+                    }
+                    var type = e.type;
+                   $('#flags').append('<div responseType=\'' + type + '\'/>');
+                },
+            transport: {
+                read: {
+                    url: target
+                },
+                create: {
+                    url: target,
+                    contentType: "application/json",
+                    type: "POST"
+                },
+                update: {
+                    url: function(data) {
+                        return target + data.Id;
+                    },
+                    contentType: "application/json",
+                    type: "PUT"
+                },
+                parameterMap: function(data, operation) {
+                    if (operation !== "read") {
+                        return JSON.stringify(data);
+                    }
+                }
+            },
+            schema: {
+                model: {
+                    id: "Id",
+                    fields: {
+                        Id: { editable: false, type: 'number' },
+                        //Id: { type: 'number' },
+                        Region: { type: 'string' },
+                        Company: { type: 'string' },
+                        LName: { type: 'string' },
+                        FName: { type: 'string' }
+                    }
+                }
+            }
+        });
+        $("#grid").kendoGrid({
+            columns: [
+                { field: "Id", title: "ID", width: "5%" },
+                { field: "Region", title: "Region", width: "15%" },
+                { field: "Company", title: "Company", width: "20%" },
+                { field: "LName", title: "Last Name", width: "20%" },
+                { field: "FName", title: "First Name", width: "20%" },
+                { command: 'edit' }
+            ],
+            dataSource: contactSource,
+            dataBound: function(dataBoundEvent) {
+                var gridWidget = dataBoundEvent.sender;
+                var dataSource = gridWidget.dataSource;
+                $.each(gridWidget.items(), function(index, item) {
+                    //use next three lines for html ID attrib
+                    // with custom ID of database ID + lname
+                    var uid = $(item).data("uid");
+                    var dataItem = dataSource.getByUid(uid);
+                    $(item).attr("id", dataItem.Id + "-" + dataItem.LName);
+
+                    //Use this line to show html ID attrib with row #
+                    //$(item).attr("id", index);
+                });
+                $(".k-grid-add").attr("id", "create_btn");
+            },
+            editable: {
+                mode: 'popup'
+            },
+            groupable: {
+                messages: {
+                    empty: "Drag and drop columns here to group by"
+                }
+            },
+            //save: function(e) {
+            //    var grid = $("#grid").data("kendoGrid");
+            //    grid.refresh();
+            //},
+            toolbar: [{ name: 'create', text: 'Create new contact' , id: 'create'}]
+        });
+
+
+    </script>
+ 
+</body>
+</html>
+        
