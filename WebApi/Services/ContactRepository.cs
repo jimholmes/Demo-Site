@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Configuration;
 using System.Data.Linq;
 using System.Linq;
 using System.Web;
@@ -12,11 +13,20 @@ namespace WebApi.Services
     {
         private const string CacheKey = "ContactStore";
 
-        string conn_str = "Server=(local);Database=demos;Trusted_Connection=True;";
+        string conn_str;
+
+
+        public ContactRepository()
+        {
+            conn_str = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+        }
+
         //private string conn_str ="Data Source=(localDB)\\v11.0;Integrated Security=True";
         public IList<Contact> GetAllContacts()
         {
-            DataContext db = new DataContext(conn_str);
+
+            DataContext db = 
+                new DataContext(conn_str);
             Table<Contact>from_db = db.GetTable<Contact>();
             
             IList<Contact>contacts = new List<Contact>();
