@@ -1,8 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{E389DF71-CEFD-4D2F-B016-C4A4CAC91C4F}"
+	ProjectSection(SolutionItems) = preProject
+		CreateContacts.sql = CreateContacts.sql
+		CreateDB.sql = CreateDB.sql
+		InsertContacts.sql = InsertContacts.sql
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Site", "WebApi\Site.csproj", "{546C3399-1064-428D-A639-52C16D0B54DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{6427DBA5-BC61-4EE8-9558-B0C3B7A7602B}"
@@ -10,13 +17,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupportApi", "SupportApi\SupportApi.csproj", "{AE5EF9E3-1C37-42FC-AAEF-48068297EA2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.TestStudio", "Tests.TestStudio\Tests.TestStudio.csproj", "{6CC2DDDD-E55B-4E70-A065-B21AA2566186}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{E389DF71-CEFD-4D2F-B016-C4A4CAC91C4F}"
-	ProjectSection(SolutionItems) = preProject
-		CreateContacts.sql = CreateContacts.sql
-		CreateDB.sql = CreateDB.sql
-		InsertContacts.sql = InsertContacts.sql
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.WebDriver", "Tests.WebDriver\Tests.WebDriver.csproj", "{8A894172-4B0A-46B6-B69C-5A2E78C1C64E}"
 EndProject

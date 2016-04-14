@@ -13,9 +13,11 @@ namespace SupportApi
     public static class DataHelpers
     {
         private static SqlConnection conn;
+        private static string conn_str = 
+            "Data Source=S12R2\\SQLEXPRESS; Trusted_Connection=Yes;Database=Demos";
 
-        private static string conn_str =
-            "Integrated Security=true;Initial Catalog=demos;Server=(local);";
+        //private static string conn_str =
+        //    "Integrated Security=true;Initial Catalog=demos;Server=(local);";
         public static int get_high_contact_id()
         {
             int id;

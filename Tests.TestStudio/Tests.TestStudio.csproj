@@ -50,14 +50,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Can_add_user_to_grid.tstest">
+    <None Include="AJAX\ComboBox.tstest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Create\Can_add_user_to_grid.tstest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Settings.aiis" />
-    <None Include="Can_add_new_entry_to_grid.tstest" />
+    <None Include="Create\Can_add_new_entry_to_grid.tstest" />
+    <None Include="Test First -- Can create new user.tstest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Can_add_new_entry_to_grid.resx">
+    <None Include="Create\Can_add_new_entry_to_grid.resx">
       <DependentUpon>Can_add_new_entry_to_grid.tstest</DependentUpon>
     </None>
   </ItemGroup>
@@ -65,7 +71,7 @@
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Can_add_user_to_grid.resx">
+    <None Include="Create\Can_add_user_to_grid.resx">
       <DependentUpon>Can_add_user_to_grid.tstest</DependentUpon>
     </None>
   </ItemGroup>

@@ -18,7 +18,8 @@ namespace WebApi.Services
 
         public ContactRepository()
         {
-            conn_str = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+            //conn_str = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+            conn_str = "Data Source=S12R2\\SQLEXPRESS; Trusted_Connection=Yes;Database=Demos";
         }
 
         //private string conn_str ="Data Source=(localDB)\\v11.0;Integrated Security=True";
