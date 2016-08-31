@@ -96,7 +96,25 @@ namespace WebApi.Services
             }
             return true;
         }
+
+        public bool DeleteContact(Contact contact)
+        {
+            ContactDataContext db = new ContactDataContext(conn_str);
+            db.Contacts.Attach(contact);
+            db.Contacts.DeleteOnSubmit(contact);
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+        }
     }
+
+    
 
     public class ContactDataContext : DataContext
     {

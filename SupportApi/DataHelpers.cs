@@ -16,8 +16,6 @@ namespace SupportApi
         private static string conn_str = 
             "Data Source=S12R2\\SQLEXPRESS; Trusted_Connection=Yes;Database=Demos";
 
-        //private static string conn_str =
-        //    "Integrated Security=true;Initial Catalog=demos;Server=(local);";
         public static int get_high_contact_id()
         {
             int id;
@@ -45,7 +43,7 @@ namespace SupportApi
             contact.FName = Faker.Name.First();
             contact.LName = Faker.Name.Last();
             contact.Region = Faker.Address.Country();
-
+    
             ContactRepository repos = new ContactRepository();
             return repos.SaveContact(contact).Id;
         }

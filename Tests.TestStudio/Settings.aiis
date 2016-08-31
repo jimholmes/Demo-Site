@@ -196,7 +196,7 @@
     ],
     "ScheduleServerUrl": "http://localhost:8009/",
     "IsScheduleServerRemote": false,
-    "ProjectVersion": "2015.3.1005.0",
+    "ProjectVersion": "2016.1.321.0",
     "Namespace": "Tests.TestStudio",
     "AssemblyName": "Tests.TestStudio",
     "OutputFolder": "bin",
@@ -204,7 +204,7 @@
       "Can add a new user to grid.tstest"
     ],
     "DisabledTranslators": [],
-    "SkipFindExpressionSetDataDrivenWarning": false,
+    "SkipFindExpressionSetDataDrivenWarning": true,
     "BugTrackerPersistableSettings": {
       "TeamPulse Server": {
         "__type": "Telerik.TestStudio.TeamPulseBugTracker.TeamPulseTrackerSettings",
@@ -215,7 +215,7 @@
           "ProjectName": "CRM System",
           "ServerName": "http://localhost:9898",
           "RootName": "TeamPulseTrackerSettings",
-          "CurrentVersion": "2015.3.1314.0",
+          "CurrentVersion": "2016.1.330.0",
           "XmlBlob": null
         }
       }
@@ -225,6 +225,6 @@
     "BugAddAttachment": true,
     "BugAutoSubmit": false,
     "BugDescriptionMask": "{0}",
-    "SelectedBrowserOption": 0
+    "SelectedBrowserOption": 4
   }
 }

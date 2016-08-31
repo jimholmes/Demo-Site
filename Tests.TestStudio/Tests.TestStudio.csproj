@@ -37,6 +37,7 @@
     <Reference Include="ArtOfTest.WebAii" />
     <Reference Include="ArtOfTest.WebAii.Design" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="Telerik.WebAii.Controls.Html" />
     <Reference Include="Telerik.WebAii.Controls.Xaml" />
@@ -49,10 +50,14 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Create\Can_update_entry_on_grid.tstest.cs">
+      <DependentUpon>Can_update_entry_on_grid.tstest</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="AJAX\ComboBox.tstest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Create\Can_update_entry_on_grid.tstest" />
     <None Include="Create\Can_add_user_to_grid.tstest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -74,6 +79,16 @@
     <None Include="Create\Can_add_user_to_grid.resx">
       <DependentUpon>Can_add_user_to_grid.tstest</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SupportApi\SupportApi.csproj">
+      <Project>{ae5ef9e3-1c37-42fc-aaef-48068297ea2d}</Project>
+      <Name>SupportApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApi\Site.csproj">
+      <Project>{546c3399-1064-428d-a639-52c16d0b54db}</Project>
+      <Name>Site</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
