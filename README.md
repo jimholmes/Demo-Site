@@ -33,4 +33,5 @@ WebApi/KendoGrid-*.html are progressive files meant to show how to make the syst
 * Grid-1 is default Kendo grid. Look at dynamic IDs on table.
 * Grid-2 adds a Create button to make new contacts.
 * Grid-3 changes grid IDs so they're unique with the row number. Not the best. 
-* Grid-4 changes IDs so they are DB ID + last name.
+* Grid-4 changes IDs so they are DB ID + last name.  
+* KendoGrid.html is the final piece that shows all things together. Additionally it writes to the <div id=flags/> element after each type response from editing, creating, etc. This makes a "latch" you can use for asynch waits: Simply wait on the element to update with the response type you're looking for. See line 23.
