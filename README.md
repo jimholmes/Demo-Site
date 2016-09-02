@@ -6,9 +6,11 @@ A site I use for various demonstrations of common test automation problems.
 # Setup
 It's kludgy ATM. 
 
-0) Run CreateDB.sql
-1) Run CreateContacts.sql
-2) Run InsertContacts.sql
+1. Update SQL connection string in Demo-Site/SupportApi/DataHelpers.cs
+2. Update SQL connection string in Demo-Site/WebApi/Web.config
+2. Run CreateDB.sql
+3. Run CreateContacts.sql
+4. Run InsertContacts.sql
 
 Add site as an app in IIS.
 
