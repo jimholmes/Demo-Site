@@ -23,6 +23,8 @@ namespace Tests
             test.LName = "zyzyzyz";
             test.FName = "jhsadfljhasfdlkjh";
 
+            //Id was initially -1. Successful save will return > 0.
+            //  (Because I keep forgetting this when I come back and re-read)
             Assert.IsTrue(repository.SaveContact(test).Id>0);
         }
     }
