@@ -12,7 +12,9 @@
     <div id="grid"></div>
 
     <script>
-        var target = "http://localhost/demosite/api/contact/";
+        //var target = "http://localhost/demosite/api/contact/";
+        var target = "http://demosite.com/api/contact/";
+
         var contactSource = new kendo.data.DataSource({
                 requestEnd: function (e) {
                     var node = document.getElementById('flags');

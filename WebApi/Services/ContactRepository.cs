@@ -19,10 +19,9 @@ namespace WebApi.Services
         public ContactRepository()
         {
             //conn_str = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
-            conn_str = "Data Source=S12R2\\SQLEXPRESS; Trusted_Connection=Yes;Database=Demos";
+            conn_str = "Data Source=WIN-DVR6LHJC4CB\\DEMOS; Trusted_Connection=Yes;Database=Demos";
         }
 
-        //private string conn_str ="Data Source=(localDB)\\v11.0;Integrated Security=True";
         public IList<Contact> GetAllContacts()
         {
 
@@ -35,7 +34,7 @@ namespace WebApi.Services
             foreach (Contact contact in from_db)
             {
                 contacts.Add(contact);
-            }
+            }   
 
             return ShuffleContacts(contacts);
         }
