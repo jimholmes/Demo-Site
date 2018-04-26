@@ -22,8 +22,12 @@ namespace Tests.WebDriver
         [TestFixtureSetUp]
         public void Setup()
         {
-            browser = new FirefoxDriver();
-            browser.Navigate().GoToUrl("http://localhost/demosite/KendoGrid.html");
+            System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", "D:\\Projects\\SaneWebDriver-CSharp\\libs\\geckodriver.exe");
+    
+            FirefoxOptions opts = new FirefoxOptions();
+            opts.BrowserExecutableLocation = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
+            browser = new FirefoxDriver(opts);
+            browser.Navigate().GoToUrl("http://demosite.com/KendoGrid.html");
 
             wait = new WebDriverWait(browser, new TimeSpan(30000000));
             wait.Until(ExpectedConditions.ElementExists(By.Id("create_btn")));
