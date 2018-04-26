@@ -19,11 +19,9 @@ namespace Tests.WebDriver
         private IWebDriver browser;
         private WebDriverWait wait;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
-            System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", "D:\\Projects\\SaneWebDriver-CSharp\\libs\\geckodriver.exe");
-    
             FirefoxOptions opts = new FirefoxOptions();
             opts.BrowserExecutableLocation = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
             browser = new FirefoxDriver(opts);
@@ -42,7 +40,7 @@ namespace Tests.WebDriver
                 By.CssSelector("#flags > div")));
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void Teardown()
         {
             browser.Quit();
@@ -53,7 +51,7 @@ namespace Tests.WebDriver
         {
             //Re-read grid since it was updated. Avoid StaleElemRef Exceptions
             IWebElement grid = browser.FindElement(By.Id("grid"));
-            Assert.IsNotNullOrEmpty(
+            Assert.IsNotNull(
                 grid.FindElement(By.CssSelector("tr[id$='Whitehall']")).Text
                 );
         }
