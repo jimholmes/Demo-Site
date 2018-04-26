@@ -14,7 +14,7 @@ INSERT INTO [dbo].[Contacts]
 ('Ludwig','Beethoven','Top Notch Music Academy','Europe'),
 ('Jayne','Cobb','Blue Sun','New Earth'),
 ('Albert','Einstein','Relativity, Inc.','Eastern'),
-('Jim','Holmes','Pillar','Midwest'),
+('Jim','Holmes','Pillar','Pacific Northwest'),
 ('Robin','Knight','Bravely Bravely, LLC','Scotland'),
 ('Guinevere','Leodegrance','Round Table Hotels','Scotland'),
 ('Katy','McGillicuddy','Tip Top Software','Midwest'),

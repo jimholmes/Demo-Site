@@ -1,6 +1,9 @@
 USE [demos]
 GO
 
+DROP TABLE dbo.Contacts
+GO
+
 /****** Object:  Table [dbo].[Contacts]    Script Date: 6/26/2014 10:29:30 AM ******/
 SET ANSI_NULLS ON
 GO
