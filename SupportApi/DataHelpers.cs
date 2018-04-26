@@ -13,8 +13,8 @@ namespace SupportApi
     public static class DataHelpers
     {
         private static SqlConnection conn;
-        private static string conn_str = 
-            "Data Source=S12R2\\SQLEXPRESS; Trusted_Connection=Yes;Database=Demos";
+        private static string conn_str =
+            "Data Source=WIN-DVR6LHJC4CB\\DEMOS; Trusted_Connection=Yes;Database=Demos";
 
         public static int get_high_contact_id()
         {
