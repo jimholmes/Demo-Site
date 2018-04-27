@@ -8,11 +8,12 @@ It's kludgy ATM.
 
 1. Update SQL connection string in Demo-Site/SupportApi/DataHelpers.cs
 2. Update SQL connection string in Demo-Site/WebApi/Web.config
-2. Run CreateDB.sql
-3. Run CreateContacts.sql
-4. Run InsertContacts.sql
+3. Update targetString in Demo-Site/Scripts/appConfig.js
+4. Run CreateDB.sql
+5. Run CreateContacts.sql
+6. Run InsertContacts.sql
 
-Add site as an app in IIS.
+Add site as an app in IIS. Check the usual tomfoolery around the site's app pool ID account having access to the database.
 
 # Overview
 
