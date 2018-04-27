@@ -18,8 +18,7 @@ namespace WebApi.Services
 
         public ContactRepository()
         {
-            //conn_str = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
-            conn_str = "Data Source=WIN-DVR6LHJC4CB\\DEMOS; Trusted_Connection=Yes;Database=Demos";
+            conn_str = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
         }
 
         public IList<Contact> GetAllContacts()
