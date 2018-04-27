@@ -283,6 +283,7 @@
     <Content Include="KendoGrid-3.html" />
     <Content Include="KendoGrid-2.html" />
     <Content Include="KendoGrid-1.html" />
+    <Content Include="Scripts\appConfig.js" />
     <Content Include="WebForm1.aspx" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\jhdemos - FTP.pubxml" />
