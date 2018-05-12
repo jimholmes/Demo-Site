@@ -19,6 +19,10 @@ namespace WebApi.Services
         {
             conn_str = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
         }
+        public ContactRepository(string connStr)
+        {
+            conn_str = connStr;
+        }
 
         public IList<Contact> GetAllContacts()
         {

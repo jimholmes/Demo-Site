@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using WebApi.Models;
 using WebApi.Services;
 
@@ -13,8 +10,9 @@ namespace SupportApi
     public static class DataHelpers
     {
         private static SqlConnection conn;
+        
         private static string conn_str =
-            "Data Source=WIN-DVR6LHJC4CB\\DEMOS; Trusted_Connection=Yes;Database=Demos";
+         "Data Source=WIN-DVR6LHJC4CB\\DEMOS; Trusted_Connection=Yes;Database=Demos";
 
         public static int get_high_contact_id()
         {
@@ -33,7 +31,7 @@ namespace SupportApi
 
         public static Contact get_contact_by_id(int id)
         {
-            ContactRepository repos = new ContactRepository();
+            ContactRepository repos = new ContactRepository(conn_str);
             return repos.GetOneContact(id);
         }
         public static int create_new_contact()

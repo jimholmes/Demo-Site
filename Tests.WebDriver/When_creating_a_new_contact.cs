@@ -25,7 +25,9 @@ namespace Tests.WebDriver
             FirefoxOptions opts = new FirefoxOptions();
             opts.BrowserExecutableLocation = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
             browser = new FirefoxDriver(opts);
+            //browser.Navigate().GoToUrl("http://jhdemos.azurewebsites.net/KendoGrid.html");
             browser.Navigate().GoToUrl("http://demosite.com/KendoGrid.html");
+            
 
             wait = new WebDriverWait(browser, new TimeSpan(30000000));
             wait.Until(ExpectedConditions.ElementExists(By.Id("create_btn")));
@@ -51,9 +53,7 @@ namespace Tests.WebDriver
         {
             //Re-read grid since it was updated. Avoid StaleElemRef Exceptions
             IWebElement grid = browser.FindElement(By.Id("grid"));
-            Assert.IsNotNull(
-                grid.FindElement(By.CssSelector("tr[id$='Whitehall']")).Text
-                );
+            wait.Until(ExpectedConditions.ElementExists(By.CssSelector("tr[id$='Whitehall']")));
         }
 
         [Test]

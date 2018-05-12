@@ -15,7 +15,7 @@ namespace Tests
         [Test]
         public void saving_a_valid_contact_returns_an_id()
         {
-            ContactRepository repository = new ContactRepository();
+            ContactRepository repository = new ContactRepository(Settings.db_connection_string);
             Contact test = new Contact();
             test.Id = -1;
             test.Region = "zzzzz";

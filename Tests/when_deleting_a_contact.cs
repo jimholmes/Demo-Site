@@ -19,7 +19,7 @@ namespace Tests
 
         [SetUp]
         public void create_new_contact_each_time() {
-            repository = new ContactRepository();
+            repository = new ContactRepository(Settings.db_connection_string);
             Contact testContact = new Contact();
             testContact.Id = -1;
             testContact.Region = "zzzzz";

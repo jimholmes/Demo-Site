@@ -13,13 +13,18 @@
     <div id="grid"></div>
 
     <script>
-        
+        // Uses all "tricks" of pages 1-4
+        // PLUS adds in asynch flag when any web service call completes.
+        //   See requestEnd around line 20
+        // Also adds custom ID for Update button on popup
         var contactSource = new kendo.data.DataSource({
                 requestEnd: function (e) {
                     var node = document.getElementById('flags');
                     while (node.firstChild) {
                         node.removeChild(node.firstChild);
                     }
+                    //Next two lines add an empty DIV elem with response type
+                    //  as an attrib. This gives an easy asynch "latch"
                     var type = e.type;
                    $('#flags').append('<div responseType=\'' + type + '\'/>');
                 },
@@ -43,14 +48,16 @@
                     if (operation !== "read") {
                         return JSON.stringify(data);
                     }
-                }
+                },
+                sort: [
+                    { field: "id", dir: "asc" }
+                ]
             },
             schema: {
                 model: {
                     id: "Id",
                     fields: {
                         Id: { editable: false, type: 'number' },
-                        //Id: { type: 'number' },
                         Region: { type: 'string' },
                         Company: { type: 'string' },
                         LName: { type: 'string' },
@@ -87,15 +94,21 @@
             editable: {
                 mode: 'popup'
             },
+
+            //tag the popup window's Update button with an ID to make
+            //  it easier to locate. Thank you to my pal Carey Payette!
+            edit: function (e) {
+                e.container.find(".k-grid-update")[0].id = "UpdateBtn";
+            },
             groupable: {
                 messages: {
                     empty: "Drag and drop columns here to group by"
                 }
             },
-            //save: function(e) {
-            //    var grid = $("#grid").data("kendoGrid");
-            //    grid.refresh();
-            //},
+            save: function(e) {
+                var grid = $("#grid").data("kendoGrid");
+                grid.refresh();
+            },
             toolbar: [{ name: 'create', text: 'Create new contact' , id: 'create'}]
         });
 

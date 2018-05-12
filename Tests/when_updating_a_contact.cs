@@ -16,7 +16,7 @@ namespace Tests
         public void existing_contact_updates_properly()
         {
             int id = contact_helpers.create_test_user();
-            ContactRepository repos = new ContactRepository();
+            ContactRepository repos = new ContactRepository(Settings.db_connection_string);
             Contact toUpdate = repos.GetOneContact(id);
             toUpdate.LName = "UPDATED";
 

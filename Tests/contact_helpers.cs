@@ -13,7 +13,7 @@ namespace Tests
 
         static public int create_test_user()
         {
-            ContactRepository _repository = new ContactRepository();
+            ContactRepository _repository = new ContactRepository(Settings.db_connection_string);
             Contact test = new Contact();
             test.Id = -1;
             test.Region = "zzzzz";

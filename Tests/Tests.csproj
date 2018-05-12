@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings.cs" />
     <Compile Include="when_deleting_a_contact.cs" />
     <Compile Include="contact_helpers.cs" />
     <Compile Include="SupportApi\when_reading_from_database.cs" />
